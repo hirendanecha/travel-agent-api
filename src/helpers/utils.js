@@ -97,7 +97,7 @@ exports.notificationMail = async (userData) => {
 
   const mailObj = {
     email: userData.email,
-    subject: "HinduSocial notification",
+    subject: "Travel Agent notification",
     root: "../email-templates/notification.ejs",
     templateData: { name: name, msg: msg, url: redirectUrl },
   };
@@ -108,14 +108,14 @@ exports.notificationMail = async (userData) => {
 
 exports.channelNotificationEmail = async (userData) => {
   let name = userData?.Username;
-  let msg = `You have been assign in HealingTube channel by the HealingTube Admin.
-             To access your channel, log into your HealingTube account,click on the
-             HealingTube icon at the top of the page,then click on My Channel.`;
+  let msg = `You have been assign in TravelAgent channel by the TravelAgent Admin.
+             To access your channel, log into your TravelAgent account,click on the
+             TravelAgent icon at the top of the page,then click on My Channel.`;
 
   let redirectUrl = `${environment.FRONTEND_URL}`;
   const mailObj = {
     email: userData.Email,
-    subject: "Healing notification",
+    subject: "TravelAgent notification",
     root: "../email-templates/notification.ejs",
     templateData: { name: name, msg: msg, url: redirectUrl },
   };
@@ -142,7 +142,7 @@ exports.communityApproveEmail = async (profileId, isApprove) => {
     let redirectUrl = `${environment.FRONTEND_URL}`;
     const mailObj = {
       email: userData[0].Email,
-      subject: "Healing notification",
+      subject: "TravelAgent notification",
       root: "../email-templates/notification.ejs",
       templateData: { name: name, msg: msg, url: redirectUrl },
     };
@@ -162,7 +162,7 @@ exports.cancelAppointmentNotificationMail = async (id, practitionerName) => {
 
   const mailObj = {
     email: data.Email,
-    subject: "HinduSocial notification",
+    subject: "Travel Agent notification",
     root: "../email-templates/notification.ejs",
     templateData: { name: name, msg: msg, url: redirectUrl },
   };

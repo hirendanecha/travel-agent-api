@@ -25,7 +25,7 @@ exports.sendMail = async function (mailObj, calendarObj = null) {
     );
     const mailOptions = {
       from: {
-        name: "Hindu.Social",
+        name: "Travelagent.tube",
         address: "info@travelagent.tube",
       },
       to: mailObj.email,
