@@ -16,13 +16,9 @@ var originsWhitelist = [
   "*",
 ];
 var corsOptions = {
-  // origin: function (origin, callback) {
-  //   var isWhitelisted = originsWhitelist.indexOf(origin) !== -1;
-  //   callback(null, isWhitelisted);
-  // },
-  // origin: originsWhitelist,
-  // credentials: true,
-  // methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH", "OPTIONS"],
+  origin: "*",
+  credentials: true,
+  methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH", "OPTIONS"],
 };
 app.use(
   cors({
@@ -55,7 +51,7 @@ app.use(bodyParser.json({
 
 app.use(cookieParser())
 
-// app.options("*", cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 // All routes for the APIs //
 
